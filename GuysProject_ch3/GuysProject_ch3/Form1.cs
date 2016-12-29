@@ -13,6 +13,16 @@ namespace GuysProject_ch3
         public Form1()
         {
             InitializeComponent();
+
+            joe = new Guy();
+            joe.Name = "Joe";
+            joe.Cash = 30;
+
+            bob = new Guy();
+            bob.Name = "Bob";
+            bob.Cash = 10;
+
+            UpdateForm();
         }
 
         public void UpdateForm()

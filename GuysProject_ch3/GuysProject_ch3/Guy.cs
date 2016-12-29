@@ -9,8 +9,8 @@ namespace GuysProject_ch3
 
         public int GiveCash(int amount)
         {
-            //You are issuing a command at a guy to give cash, which simply decrements his amount. 
-            //At this point you are not passing that amount to the other guy yet. 
+            //Prompt was not clear in the beginning but the guys are not giving each other money in this problem
+            //Instaed they are getting money from the bank
             if (amount <= Cash && amount > 0)
             {
                 Cash -= amount;
