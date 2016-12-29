@@ -43,6 +43,7 @@
             this.joeButton.TabIndex = 0;
             this.joeButton.Text = "Give $10 to Joe";
             this.joeButton.UseVisualStyleBackColor = true;
+            this.joeButton.Click += new System.EventHandler(this.joeButton_Click);
             // 
             // bobButton
             // 
@@ -52,6 +53,7 @@
             this.bobButton.TabIndex = 1;
             this.bobButton.Text = "Receive $5 from Bob";
             this.bobButton.UseVisualStyleBackColor = true;
+            this.bobButton.Click += new System.EventHandler(this.bobButton_Click);
             // 
             // joesCashLabel
             // 
