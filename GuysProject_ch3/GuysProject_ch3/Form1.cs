@@ -4,6 +4,17 @@ namespace GuysProject_ch3
 {
     public partial class Form1 : Form
     {
+        //Q: Why do we declare these up here?
+        //A: Because when you declare a variable inside a method, it is only valid inside that method.
+        //It cannot be accessed from any other method. But when you declare it OUTSIDE a method but INSIDE a class
+        //Then you have added a field accessible -from any other method- inside the form
+
+        //Q: What if I put Guy joe = new Guy(); inside the Form1 method?
+        //A: That is equivalent to declaring two variables, so the joe declared in here is never set to anything
+        //One is only available in the method, other is avaialable throughout the entire form
+        //You may get a NullReferenceException not handled error which just means you tried to use
+        //an object before you created it with new.
+
         Guy joe;
 
         Guy bob;
