@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace GuysProject_ch3
 {
@@ -25,13 +26,17 @@ namespace GuysProject_ch3
         {
             InitializeComponent();
 
-            joe = new Guy();
-            joe.Name = "Joe";
-            joe.Cash = 30;
+            joe = new Guy()
+            {
+                Cash = 30,
+                Name = "Joe"
+            };
 
-            bob = new Guy();
-            bob.Name = "Bob";
-            bob.Cash = 10;
+            bob = new Guy()
+            {
+                Cash = 10,
+                Name = "Bob"
+            };
 
             UpdateForm();
         }
@@ -53,7 +58,7 @@ namespace GuysProject_ch3
             }
             else
             {
-                NotEnoughMoneyError();
+                NotEnoughBankMoneyError();
             }
         }
 
@@ -66,13 +71,46 @@ namespace GuysProject_ch3
             }
             else
             {
-                NotEnoughMoneyError();
+                NotEnoughBankMoneyError();
             }
         }
 
-        private void NotEnoughMoneyError()
+        private void NotEnoughBankMoneyError()
         {
             MessageBox.Show("Not enough money in bank: " + bank);
+        }
+
+        private void NotEnoughPersonalFunds()
+        {
+            MessageBox.Show("Not enough money in your wallet!");
+        }
+
+        private void joeGivesToBob_Click(object sender, System.EventArgs e)
+        {
+            if (joe.Cash >= 10)
+            {
+                bob.Cash += 10;
+                joe.Cash -= 10;
+                UpdateForm();
+            }
+            else
+            {
+                NotEnoughPersonalFunds();
+            }
+        }
+
+        private void bobGivesToJoe_Click(object sender, System.EventArgs e)
+        {
+            if (bob.Cash >= 5)
+            {
+                joe.Cash += 5;
+                bob.Cash -= 5;
+                UpdateForm();
+            }
+            else
+            {
+                NotEnoughPersonalFunds();
+            }
         }
     }
 }
