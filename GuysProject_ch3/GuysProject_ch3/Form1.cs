@@ -80,37 +80,16 @@ namespace GuysProject_ch3
             MessageBox.Show("Not enough money in bank: " + bank);
         }
 
-        private void NotEnoughPersonalFunds()
-        {
-            MessageBox.Show("Not enough money in your wallet!");
-        }
-
         private void joeGivesToBob_Click(object sender, System.EventArgs e)
         {
-            if (joe.Cash >= 10)
-            {
-                bob.Cash += 10;
-                joe.Cash -= 10;
-                UpdateForm();
-            }
-            else
-            {
-                NotEnoughPersonalFunds();
-            }
+            bob.ReceiveCash(joe.GiveCash(10));
+            UpdateForm();
         }
 
         private void bobGivesToJoe_Click(object sender, System.EventArgs e)
         {
-            if (bob.Cash >= 5)
-            {
-                joe.Cash += 5;
-                bob.Cash -= 5;
-                UpdateForm();
-            }
-            else
-            {
-                NotEnoughPersonalFunds();
-            }
+            joe.ReceiveCash(bob.GiveCash(5));
+            UpdateForm();
         }
     }
 }

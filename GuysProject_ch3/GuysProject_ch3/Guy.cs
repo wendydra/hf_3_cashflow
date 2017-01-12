@@ -9,8 +9,6 @@ namespace GuysProject_ch3
 
         public int GiveCash(int amount)
         {
-            //Prompt was not clear in the beginning but the guys are not giving each other money in this problem
-            //Instaed they are getting money from the bank
             if (amount <= Cash && amount > 0)
             {
                 Cash -= amount;
@@ -23,6 +21,7 @@ namespace GuysProject_ch3
                 return 0;
             }
         }
+
         public int ReceiveCash(int amount)
         {
             if (amount > 0)
